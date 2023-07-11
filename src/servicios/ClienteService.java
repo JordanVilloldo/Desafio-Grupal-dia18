@@ -16,10 +16,11 @@ public class ClienteService {
     
     java.util.Scanner leer = new java.util.Scanner(System.in).useDelimiter("\n");
     
-    Cliente c1 = new Cliente();
+   
     
     
     public void registrarCliente(){
+        Cliente c1 = new Cliente();
         
         System.out.println("Ingrese el id del cliente");
         c1.setId(leer.nextInt());
@@ -30,7 +31,7 @@ public class ClienteService {
         System.out.println("Ingrese la edad del cliente");
         c1.setEdad(leer.nextInt());
         
-        System.out.println("Ingrese la altura del cliente");
+        System.out.println("Ingrese la altura del cliente");;
         c1.setAltura(leer.nextInt());
         
         System.out.println("Ingrese el peso del cliente");
@@ -39,37 +40,31 @@ public class ClienteService {
         System.out.println("Ingrese el objetivo del cliente");
         c1.setObjetivo(leer.next());
         
-        c1.getListaClientes().add(c1);
+        Cliente.getListaClientes().add(c1);
         
         System.out.println("Cliente registrado");
     }
     
     public ArrayList<Cliente> obtenerClientes(){
         
+        return Cliente.getListaClientes();
         
-        return c1.getListaClientes();
     }
     
     public void actualizarCliente(int id, String nombre, int edad, int altura, double peso, String objetivo){
-        c1.getListaClientes().get(id).setNombre(nombre);
-        c1.getListaClientes().get(id).setEdad(edad);
-        c1.getListaClientes().get(id).setAltura(altura);
-        c1.getListaClientes().get(id).setPeso(peso);
-        c1.getListaClientes().get(id).setObjetivo(objetivo);
+        Cliente.getListaClientes().get(id).setNombre(nombre);
+        Cliente.getListaClientes().get(id).setEdad(edad);
+        Cliente.getListaClientes().get(id).setAltura(altura);
+        Cliente.getListaClientes().get(id).setPeso(peso);
+        Cliente.getListaClientes().get(id).setObjetivo(objetivo);
         
         System.out.println("Cliente actualizado");
     }
     
     public void eliminarCliente(int id){
-        c1.getListaClientes().remove(id);
+        Cliente.getListaClientes().remove(id);
         
         System.out.println("Cliente eliminado");
     }
     
-    public void mostrarClientes(){
-        for (int i = 0; i < c1.getListaClientes().size(); i++) {
-            System.out.println(c1.getListaClientes().get(i));
-            
-        }
-    }
 }

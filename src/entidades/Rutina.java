@@ -19,7 +19,7 @@ public class Rutina {
     private String nivelDificultad;
     private String descripcion;
     
-    private ArrayList<Rutina> listaRutinas = new ArrayList<>();
+    private static ArrayList<Rutina> listaRutinas = new ArrayList<>();
 
     public Rutina() {
     }
@@ -72,13 +72,15 @@ public class Rutina {
         this.descripcion = descripcion;
     }
 
-    public ArrayList<Rutina> getListaRutinas() {
+    public static ArrayList<Rutina> getListaRutinas() {
         return listaRutinas;
     }
 
-    public void setListaRutinas(ArrayList<Rutina> listaRutinas) {
-        this.listaRutinas = listaRutinas;
+    public static void setListaRutinas(ArrayList<Rutina> listaRutinas) {
+        Rutina.listaRutinas = listaRutinas;
     }
+
+    
 
     
     @Override

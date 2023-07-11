@@ -20,7 +20,7 @@ public class Cliente {
     private double peso;
     private String objetivo;
     
-    private ArrayList<Cliente> listaClientes = new ArrayList<>();
+    private static ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     public Cliente() {
     }
@@ -82,13 +82,14 @@ public class Cliente {
         this.objetivo = objetivo;
     }
 
-    public ArrayList<Cliente> getListaClientes() {
+    public static ArrayList<Cliente> getListaClientes() {
         return listaClientes;
     }
 
-    public void setListaClientes(ArrayList<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
+    public static void setListaClientes(ArrayList<Cliente> listaClientes) {
+        Cliente.listaClientes = listaClientes;
     }
+
     
     
 

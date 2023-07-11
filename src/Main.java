@@ -32,10 +32,11 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             rs.crearRutina();
         }
+        
 
         // mostrar clientes y rutinas
-        // System.out.println(cs.obtenerClientes());
-        cs.mostrarClientes();
+        System.out.println(cs.obtenerClientes());
+        //cs.mostrarClientes();
         System.out.println(rs.obtenerRutinas());
 
         // actualizar clientes

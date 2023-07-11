@@ -16,11 +16,12 @@ public class RutinaService {
 
     java.util.Scanner leer = new java.util.Scanner(System.in).useDelimiter("\n");
 
-    Rutina r1 = new Rutina();
+    
 
     public void crearRutina() {
-
-        System.out.println("Ingrese el id de la rutina");
+        Rutina r1 = new Rutina();
+        
+        System.out.println("Ingrese el id de la rutina");      
         r1.setId(leer.nextInt());
 
         System.out.println("Ingrese el nombre de la rutina");
@@ -35,28 +36,28 @@ public class RutinaService {
         System.out.println("Ingrese la descripción");
         r1.setDescripcion(leer.next());
 
-        r1.getListaRutinas().add(r1);
+        Rutina.getListaRutinas().add(r1);
 
         System.out.println("Rutina agregada");
     }
 
     public ArrayList<Rutina> obtenerRutinas() {
 
-        return r1.getListaRutinas();
+        return Rutina.getListaRutinas();
     }
 
     public void actualizarRutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion) {
 
-        r1.getListaRutinas().get(id).setNombre(nombre);
-        r1.getListaRutinas().get(id).setDuracion(duracion);
-        r1.getListaRutinas().get(id).setNivelDificultad(nivelDificultad);
-        r1.getListaRutinas().get(id).setDescripcion(descripcion);
+        Rutina.getListaRutinas().get(id).setNombre(nombre);
+        Rutina.getListaRutinas().get(id).setDuracion(duracion);
+        Rutina.getListaRutinas().get(id).setNivelDificultad(nivelDificultad);
+        Rutina.getListaRutinas().get(id).setDescripcion(descripcion);
 
         System.out.println("Rutina actualizada");
     }
 
     public void eliminarRutina(int id) {
-        r1.getListaRutinas().remove(id);
+        Rutina.getListaRutinas().remove(id);
 
         System.out.println("Rutina eliminada");
     }
