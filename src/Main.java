@@ -23,6 +23,46 @@ public class Main {
         ClienteService cs = new ClienteService();
         RutinaService rs = new RutinaService();
 
+                // Registros clientes
+        cs.registrarClientePorParametros("Lilia",29,160,55,"Musculo");
+        cs.registrarClientePorParametros("Jordan",23,180,60,"Subir");
+        cs.registrarClientePorParametros("kike", 27, 175, 70, "make money");
+
+        // crear rutinas
+        rs.crearRutinaPorParametro("cardio",30,"easy","no");
+        rs.crearRutinaPorParametro("pesas",60,"medium","no");
+
+        // mostrar clientes y rutinas
+        // System.out.println(cs.obtenerClientes());
+        cs.mostrarClientes();
+        System.out.println(rs.obtenerRutinas().toString());
+
+        // actualizar clientes
+        cs.actualizarCliente(0, "cindy", 26, 155, 65, "nuevo");
+        cs.actualizarCliente(1, "anonymus", 999, 99, 99, "");
+
+        // actualizar rutinas
+        rs.actualizarRutina(0, "recreo", 0, "facil", "solo comer");
+        rs.actualizarRutina(1, "spinning", 30, "Medio", "");
+
+        // mostrar clientes y rutinas
+        System.out.println("Actualizados:");
+        // System.out.println(cs.obtenerClientes());
+        cs.mostrarClientes();
+        System.out.println(rs.obtenerRutinas());
+
+        // eliminar clientes
+        cs.eliminarCliente(1);
+
+        // eliminar rutinas
+        rs.eliminarRutina(0);
+
+        // mostrar clientes y rutinas
+        System.out.println("Eliminados:");
+        // System.out.println(cs.obtenerClientes());
+        cs.mostrarClientes();
+        System.out.println(rs.obtenerRutinas());
+        /*
         // Registros clientes
         for (int i = 0; i < 5; i++) {
             cs.registrarCliente();
@@ -62,7 +102,8 @@ public class Main {
         System.out.println("Eliminados:");
         System.out.println(cs.obtenerClientes());
         System.out.println(rs.obtenerRutinas());
-
+        
+        */
     }
 
 }

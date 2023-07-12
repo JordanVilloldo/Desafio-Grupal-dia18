@@ -12,21 +12,25 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class Cliente {
-    
+
     private int id;
     private String nombre;
     private int edad;
     private int altura;
     private double peso;
     private String objetivo;
-    
+
     private static ArrayList<Cliente> listaClientes = new ArrayList<>();
 
+    private static int idAsignado = 0;
+
     public Cliente() {
+        this.id = idAsignado;
+        idAsignado++; // este sera el id para el proximo en instanciarse
     }
 
-    public Cliente(int id, String nombre, int edad, int altura, double peso, String objetivo) {
-        this.id = id;
+    public Cliente(String nombre, int edad, int altura, double peso, String objetivo) {
+
         this.nombre = nombre;
         this.edad = edad;
         this.altura = altura;
@@ -36,10 +40,6 @@ public class Cliente {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -83,21 +83,12 @@ public class Cliente {
     }
 
     public static ArrayList<Cliente> getListaClientes() {
-        return listaClientes;
+        return listaClientes; 
     }
-
-    public static void setListaClientes(ArrayList<Cliente> listaClientes) {
-        Cliente.listaClientes = listaClientes;
-    }
-
-    
-    
 
     @Override
     public String toString() {
         return "Cliente{" + "id: " + id + ", nombre: " + nombre + ", edad: " + edad + " años, altura: " + altura + "cm, peso: " + peso + "kg, objetivo: " + objetivo + '}' + "\n";
     }
-    
-    
-    
+
 }

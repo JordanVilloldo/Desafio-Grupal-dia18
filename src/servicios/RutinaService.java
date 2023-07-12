@@ -16,13 +16,8 @@ public class RutinaService {
 
     java.util.Scanner leer = new java.util.Scanner(System.in).useDelimiter("\n");
 
-    
-
     public void crearRutina() {
         Rutina r1 = new Rutina();
-        
-        System.out.println("Ingrese el id de la rutina");      
-        r1.setId(leer.nextInt());
 
         System.out.println("Ingrese el nombre de la rutina");
         r1.setNombre(leer.next());
@@ -60,6 +55,17 @@ public class RutinaService {
         Rutina.getListaRutinas().remove(id);
 
         System.out.println("Rutina eliminada");
+    }
+
+    public void crearRutinaPorParametro(String nombre, int duracion, String nivelDificultad, String descripcion) {
+        Rutina r1 = new Rutina();
+
+        r1.setNombre(nombre);
+        r1.setDuracion(duracion);
+        r1.setNivelDificultad(nivelDificultad);
+        r1.setDescripcion(descripcion);
+
+        Rutina.getListaRutinas().add(r1);
     }
 
 }

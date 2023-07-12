@@ -12,20 +12,24 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class Rutina {
-    
+
     private int id;
     private String nombre;
     private int duracion;
     private String nivelDificultad;
     private String descripcion;
-    
+
     private static ArrayList<Rutina> listaRutinas = new ArrayList<>();
 
+    private static int idAsignado = 0;
+
     public Rutina() {
+        this.id = idAsignado;
+        idAsignado++; // este sera el id para el proximo en instanciarse
     }
 
-    public Rutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion) {
-        this.id = id;
+    public Rutina(String nombre, int duracion, String nivelDificultad, String descripcion) {
+
         this.nombre = nombre;
         this.duracion = duracion;
         this.nivelDificultad = nivelDificultad;
@@ -34,10 +38,6 @@ public class Rutina {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -76,18 +76,9 @@ public class Rutina {
         return listaRutinas;
     }
 
-    public static void setListaRutinas(ArrayList<Rutina> listaRutinas) {
-        Rutina.listaRutinas = listaRutinas;
-    }
-
-    
-
-    
     @Override
     public String toString() {
         return "Rutina{" + "id: " + id + ", nombre: " + nombre + ", duracion: " + duracion + "min, nivelDificultad: " + nivelDificultad + ", descripcion: " + descripcion + '}' + "\n";
     }
-    
-    
-    
+
 }
